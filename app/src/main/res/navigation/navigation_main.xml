@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_main"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="net.samystudio.beaver.ui.main.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home">
+        <deepLink app:uri="https://samystudio.github.io" />
+        <action
+            android:id="@+id/action_home_to_userProfile"
+            app:destination="@id/userProfileFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="net.samystudio.beaver.ui.main.userProfile.UserProfileFragment"
+        android:label="UserProfileFragment"
+        tools:layout="@layout/fragment_user_profile" />
+    <fragment
+        android:id="@+id/authenticatorFragment"
+        android:name="net.samystudio.beaver.ui.main.authenticator.AuthenticatorFragment"
+        android:label="AuthenticatorFragment"
+        tools:layout="@layout/fragment_authenticator" />
+    <action
+        android:id="@+id/action_global_authenticatorFragment"
+        app:destination="@id/authenticatorFragment"
+        app:enterAnim="@anim/nav_default_enter_anim"
+        app:exitAnim="@anim/nav_default_exit_anim"
+        app:launchSingleTop="true"
+        app:popEnterAnim="@anim/nav_default_enter_anim"
+        app:popExitAnim="@anim/nav_default_pop_exit_anim"
+        app:popUpTo="@id/homeFragment"
+        app:popUpToInclusive="false" />
+    <dialog
+        android:id="@+id/alertDialog"
+        android:name="net.samystudio.beaver.ui.common.dialog.AlertDialog"
+        android:label="AlertDialog"
+        tools:layout="@layout/mtrl_alert_dialog">
+        <argument
+            android:name="titleRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="messageRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="message"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="iconAttribute"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="iconRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="iconBitmap"
+            android:defaultValue="@null"
+            app:argType="android.graphics.Bitmap"
+            app:nullable="true" />
+        <argument
+            android:name="iconColorAttribute"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="iconColorRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <!-- integer can't be null :(
+        -2147483648 is Int.MIN_VALUE and will be consider as null -->
+        <argument
+            android:name="iconColor"
+            android:defaultValue="-2147483648"
+            app:argType="integer" />
+        <argument
+            android:name="positiveButtonRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="positiveButton"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="positiveButtonIconRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <!-- integer can't be null :(
+        -2147483648 is Int.MIN_VALUE and will be consider as null -->
+        <argument
+            android:name="positiveButtonColor"
+            android:defaultValue="-2147483648"
+            app:argType="integer" />
+        <argument
+            android:name="positiveButtonColorRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="positiveButtonColorStateList"
+            android:defaultValue="@null"
+            app:argType="android.content.res.ColorStateList"
+            app:nullable="true" />
+        <argument
+            android:name="positiveButtonColorStateListRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="negativeButtonRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="negativeButton"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="negativeButtonIconRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <!-- integer can't be null :(
+        -2147483648 is Int.MIN_VALUE and will be consider as null -->
+        <argument
+            android:name="negativeButtonColor"
+            android:defaultValue="-2147483648"
+            app:argType="integer" />
+        <argument
+            android:name="negativeButtonColorRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="negativeButtonColorStateList"
+            android:defaultValue="@null"
+            app:argType="android.content.res.ColorStateList"
+            app:nullable="true" />
+        <argument
+            android:name="negativeButtonColorStateListRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="neutralButtonRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="neutralButton"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <!-- integer can't be null :(
+        -2147483648 is Int.MIN_VALUE and will be consider as null -->
+        <argument
+            android:name="neutralButtonColor"
+            android:defaultValue="-2147483648"
+            app:argType="integer" />
+        <argument
+            android:name="neutralButtonIconRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="neutralButtonColorRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="neutralButtonColorStateList"
+            android:defaultValue="@null"
+            app:argType="android.content.res.ColorStateList"
+            app:nullable="true" />
+        <argument
+            android:name="neutralButtonColorStateListRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="cancelable"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="itemsRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="items"
+            android:defaultValue="@null"
+            app:argType="string[]"
+            app:nullable="true" />
+        <argument
+            android:name="multiChoiceItemsRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="multiChoiceItems"
+            android:defaultValue="@null"
+            app:argType="string[]"
+            app:nullable="true" />
+        <!-- boolean[] can't be null :(, so we use string of booleans -->
+        <argument
+            android:name="multiChoiceCheckedItems"
+            android:defaultValue="@null"
+            app:argType="string[]"
+            app:nullable="true" />
+        <argument
+            android:name="singleChoiceItemsRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="singleChoiceItems"
+            android:defaultValue="@null"
+            app:argType="string[]"
+            app:nullable="true" />
+        <argument
+            android:name="singleChoiceCheckedItem"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <argument
+            android:name="customViewRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="extras"
+            android:defaultValue="@null"
+            app:argType="android.os.Bundle"
+            app:nullable="true" />
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+    </dialog>
+    <action
+        android:id="@+id/action_global_alertDialog"
+        app:destination="@id/alertDialog" />
+    <dialog
+        android:id="@+id/errorDialog"
+        android:name="net.samystudio.beaver.ui.common.dialog.ErrorDialog"
+        android:label="ErrorDialog">
+        <argument
+            android:name="source"
+            app:argType="net.samystudio.beaver.ui.common.dialog.ErrorSource" />
+        <argument
+            android:name="appCode"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="httpOrAppCode"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="serverCode"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="message"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="titleRes"
+            android:defaultValue="@string/error_title"
+            app:argType="reference" />
+        <argument
+            android:name="positiveButtonRes"
+            android:defaultValue="@string/ok"
+            app:argType="reference" />
+        <argument
+            android:name="negativeButtonRes"
+            android:defaultValue="0"
+            app:argType="reference" />
+        <argument
+            android:name="cancelable"
+            android:defaultValue="true"
+            app:argType="boolean" />
+        <argument
+            android:name="requestCode"
+            app:argType="integer" />
+    </dialog>
+    <action
+        android:id="@+id/action_global_errorDialog"
+        app:destination="@id/errorDialog" />
+    <dialog
+        android:id="@+id/loaderDialog"
+        android:name="net.samystudio.beaver.ui.common.dialog.LoaderDialog"
+        android:label="LoaderDialog"
+        tools:layout="@layout/dialog_loader" />
+    <action
+        android:id="@+id/action_global_loaderDialog"
+        app:destination="@id/loaderDialog"
+        app:launchSingleTop="true" />
+</navigation>

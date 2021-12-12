@@ -1,0 +1,12 @@
+[
+  {
+    "title": "Production",
+    "url": "https://github.com/SamYStudiO/Beaver/blob/master/api/",
+    "defaultForBuildType": "release"
+  },
+  {
+    "title": "Test",
+    "url": "https://github.com/SamYStudiO/Beaver/blob/master/api/",
+    "defaultForBuildType": "debug"
+  }
+]
